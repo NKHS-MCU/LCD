@@ -1,0 +1,10 @@
+#include <LiquidCrystal.h> // include the library code
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // initialize interface pins
+void setup() {
+  lcd.begin(16, 2); // (字數,行數)
+  lcd.print("06050740"); // Print a message to the LCD.
+}
+void loop() {
+  lcd.setCursor(0, 1);  //起標點回到第1排第0個
+  lcd.print("Yu"); // print the number of seconds since reset:
+}

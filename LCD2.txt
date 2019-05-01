@@ -1,0 +1,16 @@
+#include <LiquidCrystal.h> // include the library code
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // initialize interface pins
+String x;
+void setup() {
+  Serial.begin(9600);
+  lcd.begin(16, 2); // (字數,行數)
+  lcd.print("06050740"); // Print a message to the LCD.
+}
+void loop() {
+  if (Serial.available())
+  {
+    x = Serial.readString();
+  }
+  lcd.setCursor(0, 1);  //起標點回到第1排第0個
+  lcd.print(x); // print the number of seconds since reset:
+}
